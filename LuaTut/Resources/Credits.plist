@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CreditsList</key>
+	<array>
+		<string>Based on CocosDragon tut by Viktor Lidholt: http://cocosbuilder.com/downloads/cocosdragon/Tutorial.html </string>
+		<string>Modified game logic &amp; iPad version by Sarah Smith http://indiegamecodingconfessions.blogspot.com/</string>
+		<string>Background Music &quot;Fallen Robot&quot; DST-FallenRobot.mp3 by DST http://www.nosoapradio.us</string>
+		<string>You win fx &quot;http://www.soundjay.com/dream-harp-sound-effect.html&quot;</string>
+		<string>CocosBuilder Tut artwork from http://cocosbuilder.com/downloads/CocosDragonResources.zip</string>
+		<string>Code based on tutorial from http://code.zynga.com/2012/10/creating-a-game-with-cocosbuilder/</string>
+		<string>Tree icon http://opengameart.org/content/overhead-view-bending-tree by TapSkill</string>
+		<string>Grass http://opengameart.org/content/planetcute-grass-blockpng by Daniel Cook LostGarden.com</string>
+	</array>
+</dict>
+</plist>

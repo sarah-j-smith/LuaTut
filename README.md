@@ -54,3 +54,11 @@ license shown above.
 
 All other properties, code and graphics are covered by the licenses as
 included and must be attributed or licensed as such.
+
+CocosBuilder Resources
+======================
+
+The CocosBuilder project is intended to go into a parallel directory at the same
+level as the LuaTut directory containing the XCode project.  The project is
+available as a zip file: https://www.dropbox.com/s/34v04dzotylaqhj/LuaTutBuilder.zip
+

@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "CCBReader.h"
 #import "SimpleAudioEngine.h"
+#import "LuaEngine.h"
 
 @implementation MyNavigationController
 
@@ -50,6 +51,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[LuaEngine sharedEngine] runLua];
+    
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	

@@ -7,8 +7,9 @@
 //
 
 #import "GameObject.h"
+#import "CCBAnimationManager.h"
 
-@interface Dragon : GameObject
+@interface Dragon : GameObject<CCBAnimationManagerDelegate>
 {
     float ySpeed;
     float xTarget;

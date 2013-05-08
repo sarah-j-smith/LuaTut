@@ -46,6 +46,34 @@ static GameScene *sharedScene;
     }
 }
 
+- (void)flashScoreLabelWithR:(GLubyte)red G:(GLubyte)green B:(GLubyte)blue
+{
+    CCTintTo *highlight = [CCTintTo actionWithDuration:0.5f red:red green:green blue:blue];
+    CCScaleTo *scale = [CCScaleTo actionWithDuration:0.5f scale:1.2f];
+    CCSpawn *anim = [CCSpawn actionOne:highlight two:scale];
+    highlight = [CCTintTo actionWithDuration:0.5 red:255 green:255 blue:255];
+    scale = [CCScaleTo actionWithDuration:0.5 scale:1.0f];
+    CCSpawn *anim2 = [CCSpawn actionOne:highlight two:scale];
+    CCSequence *seq = [CCSequence actionOne:anim two:anim2];
+    [scoreLabel runAction:seq];
+}
+
+- (void) incrementScore
+{
+    score += 1;
+    NSUInteger totPoss = [(Level *)level totalPossible];
+    [scoreLabel setString:[NSString stringWithFormat:@"%d / %d", score, totPoss]];
+    [self flashScoreLabelWithR:0 G:255 B:255];  // yellow
+}
+
+- (void) decrementScore
+{
+    score -= 1;
+    NSUInteger totPoss = [(Level *)level totalPossible];
+    [scoreLabel setString:[NSString stringWithFormat:@"%d / %d", score, totPoss]];
+    [self flashScoreLabelWithR:255 G:0 B:0];  // red
+}
+
 - (void) handleGameOver
 {
     [[CCDirector sharedDirector] replaceScene:[CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene"]];

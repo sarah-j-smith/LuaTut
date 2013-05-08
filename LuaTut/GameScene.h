@@ -23,5 +23,7 @@
 
 - (void) handleGameOver;
 - (void) handleLevelComplete;
+- (void) decrementScore;
+- (void) incrementScore;
 
 @end

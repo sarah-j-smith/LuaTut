@@ -112,6 +112,10 @@
 		F64D811C1738CBDE00AFABCF /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = F64D80FB1738CBDE00AFABCF /* lzio.c */; };
 		F64D811F1738CD3500AFABCF /* LuaEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = F64D811E1738CD3500AFABCF /* LuaEngine.mm */; };
 		F64D81211738CD8400AFABCF /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = F64D81201738CD8400AFABCF /* init.lua */; };
+		F64D81241738EBC700AFABCF /* LurkerBomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F64D81221738EBC700AFABCF /* LurkerBomb.ccbi */; };
+		F64D81251738EBC700AFABCF /* SeekerBomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F64D81231738EBC700AFABCF /* SeekerBomb.ccbi */; };
+		F64D81271739115900AFABCF /* LurkerBomb.lua in Resources */ = {isa = PBXBuildFile; fileRef = F64D81261739115900AFABCF /* LurkerBomb.lua */; };
+		F64D81291739DF4900AFABCF /* SeekerBomb.lua in Resources */ = {isa = PBXBuildFile; fileRef = F64D81281739DF4900AFABCF /* SeekerBomb.lua */; };
 		F64D844617375D1100067ECF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64D844517375D1100067ECF /* QuartzCore.framework */; };
 		F64D844817375D1100067ECF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64D844717375D1100067ECF /* OpenGLES.framework */; };
 		F64D844A17375D1100067ECF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64D844917375D1100067ECF /* OpenAL.framework */; };
@@ -430,6 +434,10 @@
 		F64D811D1738CD3500AFABCF /* LuaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaEngine.h; sourceTree = "<group>"; };
 		F64D811E1738CD3500AFABCF /* LuaEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LuaEngine.mm; sourceTree = "<group>"; };
 		F64D81201738CD8400AFABCF /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = init.lua; path = Resources/init.lua; sourceTree = "<group>"; };
+		F64D81221738EBC700AFABCF /* LurkerBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = LurkerBomb.ccbi; path = Resources/LurkerBomb.ccbi; sourceTree = "<group>"; };
+		F64D81231738EBC700AFABCF /* SeekerBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = SeekerBomb.ccbi; path = Resources/SeekerBomb.ccbi; sourceTree = "<group>"; };
+		F64D81261739115900AFABCF /* LurkerBomb.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LurkerBomb.lua; path = Resources/LurkerBomb.lua; sourceTree = "<group>"; };
+		F64D81281739DF4900AFABCF /* SeekerBomb.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SeekerBomb.lua; path = Resources/SeekerBomb.lua; sourceTree = "<group>"; };
 		F64D844217375D1100067ECF /* LuaTut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuaTut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64D844517375D1100067ECF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F64D844717375D1100067ECF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -928,6 +936,90 @@
 			path = Lua;
 			sourceTree = "<group>";
 		};
+		F64D812A1739DFAA00AFABCF /* CocosBuilder files */ = {
+			isa = PBXGroup;
+			children = (
+				F62450901737AAEB00CF6579 /* GameScene.ccbi */,
+				F62450911737AAEB00CF6579 /* Dragon.ccbi */,
+				F62450921737AAEB00CF6579 /* Bomb.ccbi */,
+				F62450931737AAEB00CF6579 /* Coin.ccbi */,
+				F62450941737AAEB00CF6579 /* EndCoin.ccbi */,
+				F62450AB1737B81000CF6579 /* ObstacleGrass.ccbi */,
+				F62450AC1737B81000CF6579 /* ObstacleTree.ccbi */,
+				F62450951737AAEB00CF6579 /* Explosion.ccbi */,
+				F624501117377FEB00CF6579 /* MainMenuScene.ccbi */,
+				F62450961737AAEB00CF6579 /* Level.ccbi */,
+				F64D81221738EBC700AFABCF /* LurkerBomb.ccbi */,
+				F62450BC1737DE5200CF6579 /* LevelComplete.ccbi */,
+				F64D81231738EBC700AFABCF /* SeekerBomb.ccbi */,
+				F62450C11737E32700CF6579 /* ccbDefaultImages.png */,
+				F62450C21737E32700CF6579 /* ccbDefaultImages.plist */,
+			);
+			name = "CocosBuilder files";
+			sourceTree = "<group>";
+		};
+		F64D812B1739E06200AFABCF /* CocosDragon art */ = {
+			isa = PBXGroup;
+			children = (
+				F62450A41737B0E700CF6579 /* tree_0.png */,
+				F62450A51737B0E700CF6579 /* grass block.png */,
+				F624500417377FEB00CF6579 /* cloud-hd.png */,
+				F624500517377FEB00CF6579 /* cloud.png */,
+				F624500617377FEB00CF6579 /* gameobjects-hd.png */,
+				F624500717377FEB00CF6579 /* gameobjects.png */,
+				F624500817377FEB00CF6579 /* logo-hd.png */,
+				F624500917377FEB00CF6579 /* logo.png */,
+				F624500A17377FEB00CF6579 /* play-button-hd.png */,
+				F624500B17377FEB00CF6579 /* play-button.png */,
+				F624500C17377FEB00CF6579 /* play-button-down-hd.png */,
+				F624500D17377FEB00CF6579 /* play-button-down.png */,
+				F624500E17377FEB00CF6579 /* gameobjects-hd.plist */,
+				F624500F17377FEB00CF6579 /* gameobjects.plist */,
+			);
+			name = "CocosDragon art";
+			sourceTree = "<group>";
+		};
+		F64D812C1739E08000AFABCF /* Lua scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F64D81201738CD8400AFABCF /* init.lua */,
+				F64D81281739DF4900AFABCF /* SeekerBomb.lua */,
+				F64D81261739115900AFABCF /* LurkerBomb.lua */,
+			);
+			name = "Lua scripts";
+			sourceTree = "<group>";
+		};
+		F64D812D1739E09F00AFABCF /* Audio resources */ = {
+			isa = PBXGroup;
+			children = (
+				F62450BF1737E03A00CF6579 /* dream-harp-06.caf */,
+				F62450BB1737DE5200CF6579 /* cloud_0.png */,
+				F62450B71737C3DF00CF6579 /* DST-FallenRobot.mp3 */,
+				F62450B01737BC3600CF6579 /* bluh-wup.caf */,
+				F62450B11737BC3600CF6579 /* bling.caf */,
+				F62450B21737BC3600CF6579 /* wrssh.caf */,
+			);
+			name = "Audio resources";
+			sourceTree = "<group>";
+		};
+		F64D812E1739E11700AFABCF /* Cocos template art */ = {
+			isa = PBXGroup;
+			children = (
+				F64D846E17375D1100067ECF /* iTunesArtwork */,
+				F64D845917375D1100067ECF /* Default.png */,
+				F64D845B17375D1100067ECF /* Default@2x.png */,
+				F64D845D17375D1100067ECF /* Default-568h@2x.png */,
+				F64D845F17375D1100067ECF /* Default-Landscape~ipad.png */,
+				F64D846117375D1100067ECF /* Icon-72.png */,
+				F64D846317375D1100067ECF /* Icon-Small-50.png */,
+				F64D846517375D1100067ECF /* Icon-Small.png */,
+				F64D846717375D1100067ECF /* Icon-Small@2x.png */,
+				F64D846917375D1100067ECF /* Icon.png */,
+				F64D846B17375D1100067ECF /* Icon@2x.png */,
+			);
+			name = "Cocos template art";
+			sourceTree = "<group>";
+		};
 		F64D843917375D1100067ECF = {
 			isa = PBXGroup;
 			children = (
@@ -998,56 +1090,16 @@
 		F64D845817375D1100067ECF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F62450C11737E32700CF6579 /* ccbDefaultImages.png */,
-				F62450C21737E32700CF6579 /* ccbDefaultImages.plist */,
-				F62450BF1737E03A00CF6579 /* dream-harp-06.caf */,
-				F62450BB1737DE5200CF6579 /* cloud_0.png */,
-				F62450BC1737DE5200CF6579 /* LevelComplete.ccbi */,
-				F62450B71737C3DF00CF6579 /* DST-FallenRobot.mp3 */,
-				F62450B01737BC3600CF6579 /* bluh-wup.caf */,
-				F62450B11737BC3600CF6579 /* bling.caf */,
-				F62450B21737BC3600CF6579 /* wrssh.caf */,
-				F62450AB1737B81000CF6579 /* ObstacleGrass.ccbi */,
-				F62450AC1737B81000CF6579 /* ObstacleTree.ccbi */,
-				F62450A41737B0E700CF6579 /* tree_0.png */,
-				F62450A51737B0E700CF6579 /* grass block.png */,
-				F62450A01737AB2700CF6579 /* ccbResources */,
-				F62450901737AAEB00CF6579 /* GameScene.ccbi */,
-				F62450911737AAEB00CF6579 /* Dragon.ccbi */,
-				F62450921737AAEB00CF6579 /* Bomb.ccbi */,
-				F62450931737AAEB00CF6579 /* Coin.ccbi */,
-				F62450941737AAEB00CF6579 /* EndCoin.ccbi */,
-				F62450951737AAEB00CF6579 /* Explosion.ccbi */,
-				F62450961737AAEB00CF6579 /* Level.ccbi */,
-				F624500417377FEB00CF6579 /* cloud-hd.png */,
-				F624500517377FEB00CF6579 /* cloud.png */,
-				F624500617377FEB00CF6579 /* gameobjects-hd.png */,
-				F624500717377FEB00CF6579 /* gameobjects.png */,
-				F624500817377FEB00CF6579 /* logo-hd.png */,
-				F624500917377FEB00CF6579 /* logo.png */,
-				F624500A17377FEB00CF6579 /* play-button-hd.png */,
-				F624500B17377FEB00CF6579 /* play-button.png */,
-				F624500C17377FEB00CF6579 /* play-button-down-hd.png */,
-				F624500D17377FEB00CF6579 /* play-button-down.png */,
-				F624500E17377FEB00CF6579 /* gameobjects-hd.plist */,
-				F624500F17377FEB00CF6579 /* gameobjects.plist */,
-				F624501017377FEB00CF6579 /* fileLookup.plist */,
-				F624501117377FEB00CF6579 /* MainMenuScene.ccbi */,
-				F64D845917375D1100067ECF /* Default.png */,
-				F64D845B17375D1100067ECF /* Default@2x.png */,
-				F64D845D17375D1100067ECF /* Default-568h@2x.png */,
-				F64D845F17375D1100067ECF /* Default-Landscape~ipad.png */,
-				F64D846117375D1100067ECF /* Icon-72.png */,
-				F64D846317375D1100067ECF /* Icon-Small-50.png */,
-				F64D846517375D1100067ECF /* Icon-Small.png */,
-				F64D846717375D1100067ECF /* Icon-Small@2x.png */,
-				F64D846917375D1100067ECF /* Icon.png */,
-				F64D846B17375D1100067ECF /* Icon@2x.png */,
-				F64D846D17375D1100067ECF /* Info.plist */,
-				F64D846E17375D1100067ECF /* iTunesArtwork */,
-				F62450A21737AD8800CF6579 /* ArtAndMusicCredits.rtf */,
 				F62450B91737CAA800CF6579 /* Credits.plist */,
-				F64D81201738CD8400AFABCF /* init.lua */,
+				F62450A21737AD8800CF6579 /* ArtAndMusicCredits.rtf */,
+				F64D812E1739E11700AFABCF /* Cocos template art */,
+				F64D812D1739E09F00AFABCF /* Audio resources */,
+				F64D812C1739E08000AFABCF /* Lua scripts */,
+				F64D812B1739E06200AFABCF /* CocosDragon art */,
+				F64D812A1739DFAA00AFABCF /* CocosBuilder files */,
+				F62450A01737AB2700CF6579 /* ccbResources */,
+				F624501017377FEB00CF6579 /* fileLookup.plist */,
+				F64D846D17375D1100067ECF /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1550,6 +1602,10 @@
 				F62450C31737E32700CF6579 /* ccbDefaultImages.png in Resources */,
 				F62450C41737E32700CF6579 /* ccbDefaultImages.plist in Resources */,
 				F64D81211738CD8400AFABCF /* init.lua in Resources */,
+				F64D81241738EBC700AFABCF /* LurkerBomb.ccbi in Resources */,
+				F64D81251738EBC700AFABCF /* SeekerBomb.ccbi in Resources */,
+				F64D81271739115900AFABCF /* LurkerBomb.lua in Resources */,
+				F64D81291739DF4900AFABCF /* SeekerBomb.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1799,6 +1855,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LuaTut/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LUA_COMPAT_MODULE,
+					DEBUG,
+					"COCOS2D_DEBUG=1",
+				);
 				HEADER_SEARCH_PATHS = "\"Cocos2DLib/libs/kazmath/include\"";
 				INFOPLIST_FILE = LuaTut/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -1821,6 +1882,11 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LuaTut/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LUA_COMPAT_MODULE,
+					NDEBUG,
+					"NS_BLOCK_ASSERTIONS=1",
+				);
 				HEADER_SEARCH_PATHS = "\"Cocos2DLib/libs/kazmath/include\"";
 				INFOPLIST_FILE = LuaTut/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;

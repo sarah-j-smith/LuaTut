@@ -11,10 +11,12 @@
 @interface GameObject : CCNode
 {
     BOOL isScheduledForRemove;
+    NSString *_updateScript;
 }
 
 @property (nonatomic,assign) BOOL isScheduledForRemove;
 @property (nonatomic,readonly) float radius;
+@property (nonatomic, strong) NSString *updateScript;
 
 - (void) update;
 

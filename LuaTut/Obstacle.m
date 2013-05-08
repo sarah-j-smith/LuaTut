@@ -16,7 +16,7 @@
     if ([gameObject isKindOfClass:[Dragon class]])
     {
         // Collided with the dragon, remove object and add an explosion instead
-        CCLOG(@"Got obstacle collision");
+        // CCLOG(@"Got obstacle collision");
     }
 }
 

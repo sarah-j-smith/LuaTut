@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LuaEngine : NSObject
+@class GameObject; // 2
 
-+ (LuaEngine *)sharedEngine;
+@interface LuaEngine : NSObject // 1
 
-- (void)runLua;
++ (LuaEngine *)sharedEngine; // 1
+
+- (void)runLua; // 1
+
+- (void)runScript:(NSString *) script withHost:(GameObject *)host; // 2
 
 @end

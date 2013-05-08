@@ -11,8 +11,12 @@
 #import "GameObject.h"
 #import "Coin.h"
 
+#import "LuaEngine.h" // 2
+#import "CCBReader.h"
+
 #define kCJScrollFilterFactor 0.1
 #define kCJDragonTargetOffset 80
+#define kCheatModeCoins 10
 
 @implementation Level
 
@@ -26,6 +30,25 @@
 - (void) onEnter
 {
     [super onEnter];
+    
+    BOOL isCheatMode = [[NSUserDefaults standardUserDefaults] boolForKey:@"cheatMode"];
+    if (isCheatMode)
+    {
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        float spacing = winSize.width / (kCheatModeCoins + 1);
+        CGPoint dragonPos = [dragon position];
+        float height = dragonPos.y * 0.33f;
+        for (int i = 1; i <= kCheatModeCoins; ++i)
+        {
+            Coin *cheatCoin = (Coin *)[CCBReader nodeGraphFromFile:@"Coin"];
+            [cheatCoin setPosition:ccp(spacing * i, height)];
+            [self addChild:cheatCoin];
+        }
+        CCLabelTTF *lbl = [CCLabelTTF labelWithString:@"Cheat Mode On!" fontName:@"Marker Felt" fontSize:22];
+        [lbl setColor:ccRED];
+        [lbl setPosition:ccp(winSize.width / 2.0f, height + 30.0f)];
+        [self addChild:lbl];
+    }
     
     _totalPossible = 0;
     CCNode *k;
@@ -64,6 +87,8 @@
         if ([child isKindOfClass:[GameObject class]])
         {
             GameObject* gameObject = (GameObject*)child;
+            
+            [[LuaEngine sharedEngine] runScript:[gameObject updateScript] withHost:gameObject];
             
             // Update all game objects
             [gameObject update];

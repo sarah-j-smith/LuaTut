@@ -46,8 +46,8 @@
         [label setString:[creditsList objectAtIndex:currentCredit]];
         CCScaleTo *scaleOutAnim = [CCScaleTo actionWithDuration:0.5f scale:1.2f];
         CCScaleTo *scaleInAnim = [CCScaleTo actionWithDuration:0.7 scale:1.0f];
-        CCSequence *seq = [CCSequence actionOne:[CCEaseBounceOut actionWithAction:scaleOutAnim]
-                                            two:[CCEaseBounceOut actionWithAction:scaleInAnim]];
+        CCSequence *seq = [CCSequence actionOne:scaleOutAnim
+                                            two:scaleInAnim];
         [label runAction:seq];
     }
 }

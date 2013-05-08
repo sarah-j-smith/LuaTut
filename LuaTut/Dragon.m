@@ -36,8 +36,22 @@
     xTarget = kCJStartTarget;
     ySpeed = kCJStartSpeed;
     
+    [self setUpdateScript:@"dragonX, dragonY = getPosition(self)"];
+    
     return self;
-} 
+}
+
+- (void)didLoadFromCCB
+{
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager setDelegate:self];
+}
+
+- (void)completedAnimationSequenceNamed:(NSString *)name
+{
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"Flying"];
+}
 
 - (void) update
 {
@@ -74,7 +88,7 @@
         // Took a coin
         ySpeed = kCJCoinSpeed;
         
-        [GameScene sharedScene].score += 1;
+        [[GameScene sharedScene] incrementScore];
         
         [[SimpleAudioEngine sharedEngine] playEffect:@"bling.caf"];
     }
@@ -84,8 +98,9 @@
         // Hit a bomb or obstacle
         if (ySpeed > 0) ySpeed = 0;
         
+        [[GameScene sharedScene] decrementScore];
+        
         CCBAnimationManager* animationManager = self.userObject;
-        NSLog(@"animationManager: %@", animationManager);
         [animationManager runAnimationsForSequenceNamed:@"Hit"];
     }
     else if ([gameObject isKindOfClass:[Obstacle class]])
@@ -95,7 +110,6 @@
         ySpeed = 0;
         
         CCBAnimationManager* animationManager = self.userObject;
-        NSLog(@"animationManager: %@", animationManager);
         [animationManager runAnimationsForSequenceNamed:@"Hit"];
     }
 }
